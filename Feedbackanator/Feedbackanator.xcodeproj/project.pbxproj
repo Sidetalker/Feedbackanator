@@ -15,6 +15,8 @@
 		0AD77864202A6A7200F5CC54 /* FeedbackanatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD77863202A6A7200F5CC54 /* FeedbackanatorTests.swift */; };
 		0AD7786F202A6A7300F5CC54 /* FeedbackanatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7786E202A6A7300F5CC54 /* FeedbackanatorUITests.swift */; };
 		0AD7787D202A6B7200F5CC54 /* initialState.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AD7787C202A6B7200F5CC54 /* initialState.json */; };
+		0AD77883202A6BF500F5CC54 /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD77882202A6BF500F5CC54 /* DataStructures.swift */; };
+		0AD77885202A736C00F5CC54 /* FormatterCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD77884202A736C00F5CC54 /* FormatterCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		0AD7786E202A6A7300F5CC54 /* FeedbackanatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackanatorUITests.swift; sourceTree = "<group>"; };
 		0AD77870202A6A7300F5CC54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AD7787C202A6B7200F5CC54 /* initialState.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = initialState.json; sourceTree = "<group>"; };
+		0AD77882202A6BF500F5CC54 /* DataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
+		0AD77884202A736C00F5CC54 /* FormatterCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,8 @@
 			children = (
 				0AD7784E202A6A7200F5CC54 /* AppDelegate.swift */,
 				0AD77850202A6A7200F5CC54 /* ViewController.swift */,
+				0AD77882202A6BF500F5CC54 /* DataStructures.swift */,
+				0AD77884202A736C00F5CC54 /* FormatterCache.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -287,8 +293,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AD77883202A6BF500F5CC54 /* DataStructures.swift in Sources */,
 				0AD77851202A6A7200F5CC54 /* ViewController.swift in Sources */,
 				0AD7784F202A6A7200F5CC54 /* AppDelegate.swift in Sources */,
+				0AD77885202A736C00F5CC54 /* FormatterCache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
