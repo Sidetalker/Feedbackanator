@@ -17,6 +17,8 @@
 		0AD7787D202A6B7200F5CC54 /* initialState.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AD7787C202A6B7200F5CC54 /* initialState.json */; };
 		0AD77883202A6BF500F5CC54 /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD77882202A6BF500F5CC54 /* DataStructures.swift */; };
 		0AD77885202A736C00F5CC54 /* FormatterCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD77884202A736C00F5CC54 /* FormatterCache.swift */; };
+		0AD77887202A75B100F5CC54 /* FeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD77886202A75B100F5CC54 /* FeedbackManager.swift */; };
+		0AD77889202A772A00F5CC54 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD77888202A772A00F5CC54 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		0AD7787C202A6B7200F5CC54 /* initialState.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = initialState.json; sourceTree = "<group>"; };
 		0AD77882202A6BF500F5CC54 /* DataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
 		0AD77884202A736C00F5CC54 /* FormatterCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterCache.swift; sourceTree = "<group>"; };
+		0AD77886202A75B100F5CC54 /* FeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackManager.swift; sourceTree = "<group>"; };
+		0AD77888202A772A00F5CC54 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,8 @@
 				0AD77850202A6A7200F5CC54 /* ViewController.swift */,
 				0AD77882202A6BF500F5CC54 /* DataStructures.swift */,
 				0AD77884202A736C00F5CC54 /* FormatterCache.swift */,
+				0AD77886202A75B100F5CC54 /* FeedbackManager.swift */,
+				0AD77888202A772A00F5CC54 /* Constants.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -295,8 +301,10 @@
 			files = (
 				0AD77883202A6BF500F5CC54 /* DataStructures.swift in Sources */,
 				0AD77851202A6A7200F5CC54 /* ViewController.swift in Sources */,
+				0AD77887202A75B100F5CC54 /* FeedbackManager.swift in Sources */,
 				0AD7784F202A6A7200F5CC54 /* AppDelegate.swift in Sources */,
 				0AD77885202A736C00F5CC54 /* FormatterCache.swift in Sources */,
+				0AD77889202A772A00F5CC54 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
