@@ -37,7 +37,7 @@ class FeedbackManager {
     var staleFeedbackUsers: [User] {
         return currentState.users.flatMap {
             return !$0.hasRecentFeedback ? $0 : nil
-        }.sorted()
+        }.sorted().reversed()
     }
     
     init?() {
@@ -67,6 +67,22 @@ class FeedbackManager {
         
         print("Error: Unexpected section \(indexPath.section)")
         return nil
+    }
+    
+    func giveFeedback(at indexPath: IndexPath) {
+        var user: User
+        
+        if indexPath.section == 0 {
+            user = staleFeedbackUsers[indexPath.row]
+        } else if indexPath.section == 1 {
+            user = recentFeedbackUsers[indexPath.row]
+        } else {
+            print("Error: Unexpected section \(indexPath.section)")
+            return
+        }
+        
+        totalFeedback += 1
+        user.lastInteractions.append(Interaction(id: totalFeedback, isoTime: ISOTime()))
     }
 }
 

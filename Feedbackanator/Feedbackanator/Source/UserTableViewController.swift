@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserTableViewController: UITableViewController {
+class UserTableViewController: UITableViewController, UserCellDelegate {
     
     var manager = FeedbackManager()! // Lets just crash if we can't parse the embedded JSON
 
@@ -19,6 +19,21 @@ class UserTableViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    // MARK: - UserCell delegate
+    
+    func userCellTappedGiveFeedback(_ cell: UserCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else {
+            print("Error: \(cell) not found in \(tableView)")
+            return
+        }
+        
+        tableView.beginUpdates()
+        manager.giveFeedback(at: indexPath)
+        tableView.deleteRows(at: [indexPath], with: .right)
+        tableView.insertRows(at: [IndexPath(row: manager.recentFeedbackCount - 1, section: 1)], with: .right)
+        tableView.endUpdates()
     }
 
     // MARK: - Table view data source
@@ -42,6 +57,7 @@ class UserTableViewController: UITableViewController {
             let userCell = cell as? UserCell,
             let user = manager.user(at: indexPath)
         {
+            userCell.delegate = self
             userCell.configure(for: user)
             return userCell
         }

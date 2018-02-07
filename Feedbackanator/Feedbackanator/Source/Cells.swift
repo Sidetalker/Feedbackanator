@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol UserCellDelegate {
+    func userCellTappedGiveFeedback(_ cell: UserCell)
+}
+
 class UserCell: UITableViewCell {
     
     static let height: CGFloat = 120
@@ -19,13 +23,54 @@ class UserCell: UITableViewCell {
     
     @IBOutlet weak var lineBreakLeftPadding: NSLayoutConstraint!
     
+    var delegate: UserCellDelegate?
+    var timer: Timer?
+    
+    var user: User!
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
     func configure(for user: User) {
+        self.user = user
+        
+        updateText()
+        
+        let now = Date()
+        
+        if now.timeIntervalSince(user.lastFeedbackDate) < 60 {
+            startTimer(withInterval: 1)
+        } else if now.timeIntervalSince(user.lastFeedbackDate) < 360 {
+            startTimer(withInterval: 60)
+        } else {
+            stopTimer()
+        }
+    }
+    
+    @objc private func updateText() {
+        guard let user = user else {
+            return // Can't update text without a user
+        }
+        
         lblName.text = user.name
         lblLastFeedback.attributedText = lastFeedbackString(for: user.lastFeedbackDate, prepending: "Last feedback you sent: ")
+        setNeedsDisplay()
+        
+        if Date().timeIntervalSince(user.lastFeedbackDate) >= 360 {
+            stopTimer()
+        }
+    }
+    
+    private func startTimer(withInterval interval: TimeInterval) {
+        if timer != nil { stopTimer() }
+        timer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(updateText), userInfo: nil, repeats: true)
+    }
+    
+    func stopTimer() {
+        guard timer != nil else { return }
+        timer?.invalidate()
+        timer = nil
     }
     
     func lastFeedbackString(for date: Date, prepending prependedString: String? = nil) -> NSAttributedString {
@@ -47,11 +92,8 @@ class UserCell: UITableViewCell {
             basicString += "\(timeElapsedInDays) \("day".pluralized(givenCount: timeElapsedInDays))"
         } else if timeElapsedInHours >= 1 {
             basicString += "\(timeElapsedInHours) \("hour".pluralized(givenCount: timeElapsedInHours))"
-        } else if timeElapsedInMinutes >= 10 {
-            basicString += "\(timeElapsedInMinutes) \("minute".pluralized(givenCount: timeElapsedInMinutes))"
         } else if timeElapsedInMinutes >= 1 {
-            let seconds = "second".pluralized(givenCount: timeElapsedInSeconds)
-            basicString += "\(timeElapsedInMinutes)min \(timeElapsedInSeconds) \(seconds)"
+            basicString += "\(timeElapsedInMinutes) \("minute".pluralized(givenCount: timeElapsedInMinutes))"
         } else if timeElapsedInSeconds > 10 {
             basicString += "\(timeElapsedInSeconds) seconds"
         }
@@ -81,7 +123,7 @@ class UserCell: UITableViewCell {
     }
     
     @IBAction func tapGiveFeedback(_ sender: Any) {
-        
+        delegate?.userCellTappedGiveFeedback(self)
     }
 }
 

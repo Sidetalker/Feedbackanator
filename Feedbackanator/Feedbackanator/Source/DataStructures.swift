@@ -12,7 +12,7 @@ struct Snapshot: Codable {
     var users: [User]
 }
 
-struct User: Codable {
+class User: Codable {
     var id: Int
     var name: String
     var email: String

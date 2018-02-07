@@ -61,6 +61,7 @@
 		0AD7788A202A78C900F5CC54 /* UserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
 		0AD7788C202A79DA00F5CC54 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		0AD77890202A801900F5CC54 /* Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
+		0AD77892202A994800F5CC54 /* wishlist.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = wishlist.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +143,7 @@
 			children = (
 				0AD7787C202A6B7200F5CC54 /* initialState.json */,
 				0AD77855202A6A7200F5CC54 /* Assets.xcassets */,
+				0AD77892202A994800F5CC54 /* wishlist.md */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
