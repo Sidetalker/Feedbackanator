@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0AD7784F202A6A7200F5CC54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7784E202A6A7200F5CC54 /* AppDelegate.swift */; };
-		0AD77851202A6A7200F5CC54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD77850202A6A7200F5CC54 /* ViewController.swift */; };
 		0AD77854202A6A7200F5CC54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AD77852202A6A7200F5CC54 /* Main.storyboard */; };
 		0AD77856202A6A7200F5CC54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AD77855202A6A7200F5CC54 /* Assets.xcassets */; };
 		0AD77859202A6A7200F5CC54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AD77857202A6A7200F5CC54 /* LaunchScreen.storyboard */; };
@@ -19,6 +18,9 @@
 		0AD77885202A736C00F5CC54 /* FormatterCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD77884202A736C00F5CC54 /* FormatterCache.swift */; };
 		0AD77887202A75B100F5CC54 /* FeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD77886202A75B100F5CC54 /* FeedbackManager.swift */; };
 		0AD77889202A772A00F5CC54 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD77888202A772A00F5CC54 /* Constants.swift */; };
+		0AD7788B202A78C900F5CC54 /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7788A202A78C900F5CC54 /* UserTableViewController.swift */; };
+		0AD7788D202A79DA00F5CC54 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7788C202A79DA00F5CC54 /* Helpers.swift */; };
+		0AD77891202A801900F5CC54 /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD77890202A801900F5CC54 /* Cells.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +43,6 @@
 /* Begin PBXFileReference section */
 		0AD7784B202A6A7200F5CC54 /* Feedbackanator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Feedbackanator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AD7784E202A6A7200F5CC54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0AD77850202A6A7200F5CC54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0AD77853202A6A7200F5CC54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0AD77855202A6A7200F5CC54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0AD77858202A6A7200F5CC54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,6 +58,9 @@
 		0AD77884202A736C00F5CC54 /* FormatterCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterCache.swift; sourceTree = "<group>"; };
 		0AD77886202A75B100F5CC54 /* FeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackManager.swift; sourceTree = "<group>"; };
 		0AD77888202A772A00F5CC54 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0AD7788A202A78C900F5CC54 /* UserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
+		0AD7788C202A79DA00F5CC54 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		0AD77890202A801900F5CC54 /* Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,11 +150,13 @@
 			isa = PBXGroup;
 			children = (
 				0AD7784E202A6A7200F5CC54 /* AppDelegate.swift */,
-				0AD77850202A6A7200F5CC54 /* ViewController.swift */,
 				0AD77882202A6BF500F5CC54 /* DataStructures.swift */,
 				0AD77884202A736C00F5CC54 /* FormatterCache.swift */,
 				0AD77886202A75B100F5CC54 /* FeedbackManager.swift */,
 				0AD77888202A772A00F5CC54 /* Constants.swift */,
+				0AD7788A202A78C900F5CC54 /* UserTableViewController.swift */,
+				0AD7788C202A79DA00F5CC54 /* Helpers.swift */,
+				0AD77890202A801900F5CC54 /* Cells.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -300,9 +306,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AD77883202A6BF500F5CC54 /* DataStructures.swift in Sources */,
-				0AD77851202A6A7200F5CC54 /* ViewController.swift in Sources */,
+				0AD77891202A801900F5CC54 /* Cells.swift in Sources */,
+				0AD7788D202A79DA00F5CC54 /* Helpers.swift in Sources */,
 				0AD77887202A75B100F5CC54 /* FeedbackManager.swift in Sources */,
 				0AD7784F202A6A7200F5CC54 /* AppDelegate.swift in Sources */,
+				0AD7788B202A78C900F5CC54 /* UserTableViewController.swift in Sources */,
 				0AD77885202A736C00F5CC54 /* FormatterCache.swift in Sources */,
 				0AD77889202A772A00F5CC54 /* Constants.swift in Sources */,
 			);
