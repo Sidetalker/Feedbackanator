@@ -16,7 +16,11 @@ class UserCell: UITableViewCell {
     
     static let height: CGFloat = 120
     
-    @IBOutlet weak var btnGiveFeedback: UIButton!
+    @IBOutlet weak var btnGiveFeedback: UIButton! {
+        didSet {
+            btnGiveFeedback.titleEdgeInsets.left = 20
+        }
+    }
     @IBOutlet weak var imgAvatar: UIRoundedImageView!
     @IBOutlet weak var lblLastFeedback: UILabel!
     @IBOutlet weak var lblName: UILabel!
@@ -52,6 +56,15 @@ class UserCell: UITableViewCell {
         }
         
         let now = Date()
+        var heartImage: UIImage
+        
+        if now.timeIntervalSince(user.lastFeedbackDate) < Constants.threeMonthsInSecondsIsh {
+            heartImage = ImageCache.shared.filledHeart
+        } else {
+            heartImage = ImageCache.shared.emptyHeart
+        }
+        
+        btnGiveFeedback.setImage(heartImage, for: .normal)
         
         if now.timeIntervalSince(user.lastFeedbackDate) < 60 {
             startTimer(withInterval: 1)

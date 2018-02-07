@@ -30,7 +30,6 @@ class PlaceholderView: UIView {
 }
 
 /// A UIImageView that reapplies a rounded mask on itself anytime it is resized
-@IBDesignable
 class UIRoundedImageView: UIImageView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
