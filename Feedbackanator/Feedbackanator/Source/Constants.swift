@@ -10,5 +10,5 @@ import Foundation
 
 struct Constants {
     static var twoWeeksInSeconds: TimeInterval = 14 * 24 * 60 * 60
-    static var threeMonthsInSecondsIsh: TimeInterval = Constants.twoWeeksInSeconds * 6
+    static var twelveWeeksInSeconds: TimeInterval = Constants.twoWeeksInSeconds * 6
 }
