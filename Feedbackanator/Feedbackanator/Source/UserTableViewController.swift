@@ -21,6 +21,14 @@ class UserTableViewController: UITableViewController, UserCellDelegate {
         super.didReceiveMemoryWarning()
     }
     
+    @IBAction func tappedRestart(_ sender: Any) {
+        tableView.beginUpdates()
+        tableView.deleteRows(at: manager.indexPaths, with: .right)
+        manager.restart()
+        tableView.insertRows(at: manager.indexPaths, with: .right)
+        tableView.endUpdates()
+    }
+    
     // MARK: - UserCell delegate
     
     func userCellTappedGiveFeedback(_ cell: UserCell) {

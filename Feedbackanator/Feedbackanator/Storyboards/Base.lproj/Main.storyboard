@@ -105,7 +105,13 @@
                             <outlet property="delegate" destination="uU9-kH-szE" id="Kb6-kg-MMi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="U73-RG-c8X"/>
+                    <navigationItem key="navigationItem" id="U73-RG-c8X">
+                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="luy-91-gT6">
+                            <connections>
+                                <action selector="tappedRestart:" destination="uU9-kH-szE" id="Wha-Pb-3DI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mLH-SQ-h9j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
