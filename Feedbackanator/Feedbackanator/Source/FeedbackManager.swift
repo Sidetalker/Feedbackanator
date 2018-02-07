@@ -141,6 +141,9 @@ extension User: Comparable {
     var hasRecentFeedback: Bool { return Date().timeIntervalSince(lastFeedbackDate) < Constants.twoWeeksInSeconds }
     
     static func <(lhs: User, rhs: User) -> Bool {
+        if lhs.lastInteractions.count == 0 { return false }
+        if rhs.lastInteractions.count == 0 { return true }
+        
         return lhs.lastFeedbackDate < rhs.lastFeedbackDate
     }
     

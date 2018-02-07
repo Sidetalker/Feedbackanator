@@ -21,6 +21,7 @@
 		0AD7788B202A78C900F5CC54 /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7788A202A78C900F5CC54 /* UserTableViewController.swift */; };
 		0AD7788D202A79DA00F5CC54 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7788C202A79DA00F5CC54 /* Helpers.swift */; };
 		0AD77891202A801900F5CC54 /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD77890202A801900F5CC54 /* Cells.swift */; };
+		0AD77894202AAA7B00F5CC54 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD77893202AAA7B00F5CC54 /* UserViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		0AD7788C202A79DA00F5CC54 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		0AD77890202A801900F5CC54 /* Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
 		0AD77892202A994800F5CC54 /* wishlist.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = wishlist.md; sourceTree = "<group>"; };
+		0AD77893202AAA7B00F5CC54 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 				0AD77886202A75B100F5CC54 /* FeedbackManager.swift */,
 				0AD77888202A772A00F5CC54 /* Constants.swift */,
 				0AD7788A202A78C900F5CC54 /* UserTableViewController.swift */,
+				0AD77893202AAA7B00F5CC54 /* UserViewController.swift */,
 				0AD7788C202A79DA00F5CC54 /* Helpers.swift */,
 				0AD77890202A801900F5CC54 /* Cells.swift */,
 			);
@@ -308,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AD77883202A6BF500F5CC54 /* DataStructures.swift in Sources */,
+				0AD77894202AAA7B00F5CC54 /* UserViewController.swift in Sources */,
 				0AD77891202A801900F5CC54 /* Cells.swift in Sources */,
 				0AD7788D202A79DA00F5CC54 /* Helpers.swift in Sources */,
 				0AD77887202A75B100F5CC54 /* FeedbackManager.swift in Sources */,

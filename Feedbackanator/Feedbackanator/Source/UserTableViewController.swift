@@ -11,6 +11,7 @@ import UIKit
 class UserTableViewController: UITableViewController, UserCellDelegate {
     
     var manager = FeedbackManager()! // Lets just crash if we can't parse the embedded JSON
+    var targetIndexPath = IndexPath()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,15 @@ class UserTableViewController: UITableViewController, UserCellDelegate {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueUser" {
+            let userVC = segue.destination as! UserViewController
+            _ = userVC.view // Access view to connect IBOutlets
+            userVC.configure(with: manager.user(at: targetIndexPath)!)
+        }
+        
     }
     
     @IBAction func tappedRestart(_ sender: Any) {
@@ -31,7 +41,7 @@ class UserTableViewController: UITableViewController, UserCellDelegate {
     
     // MARK: - UserCell delegate
     
-    func userCellTappedGiveFeedback(_ cell: UserCell) {
+    func tappedGiveFeedback(from cell: UserCell) {
         guard let indexPath = tableView.indexPath(for: cell) else {
             print("Error: \(cell) not found in \(tableView)")
             return
@@ -94,5 +104,10 @@ class UserTableViewController: UITableViewController, UserCellDelegate {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        targetIndexPath = indexPath
+        return indexPath
     }
 }
