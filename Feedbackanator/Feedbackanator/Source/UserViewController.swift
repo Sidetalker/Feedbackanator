@@ -10,7 +10,7 @@ import UIKit
 
 class UserViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var imgAvatar: UIImageView!
+    @IBOutlet weak var imgAvatar: UIRoundedImageView!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
@@ -18,6 +18,7 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellFeedback")
     }
 

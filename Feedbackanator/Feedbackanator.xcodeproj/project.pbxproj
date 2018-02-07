@@ -14,7 +14,7 @@
 		0AD77864202A6A7200F5CC54 /* FeedbackanatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD77863202A6A7200F5CC54 /* FeedbackanatorTests.swift */; };
 		0AD7786F202A6A7300F5CC54 /* FeedbackanatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7786E202A6A7300F5CC54 /* FeedbackanatorUITests.swift */; };
 		0AD7787D202A6B7200F5CC54 /* initialState.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AD7787C202A6B7200F5CC54 /* initialState.json */; };
-		0AD77883202A6BF500F5CC54 /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD77882202A6BF500F5CC54 /* DataStructures.swift */; };
+		0AD77883202A6BF500F5CC54 /* Codables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD77882202A6BF500F5CC54 /* Codables.swift */; };
 		0AD77885202A736C00F5CC54 /* FormatterCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD77884202A736C00F5CC54 /* FormatterCache.swift */; };
 		0AD77887202A75B100F5CC54 /* FeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD77886202A75B100F5CC54 /* FeedbackManager.swift */; };
 		0AD77889202A772A00F5CC54 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD77888202A772A00F5CC54 /* Constants.swift */; };
@@ -22,6 +22,7 @@
 		0AD7788D202A79DA00F5CC54 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7788C202A79DA00F5CC54 /* Helpers.swift */; };
 		0AD77891202A801900F5CC54 /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD77890202A801900F5CC54 /* Cells.swift */; };
 		0AD77894202AAA7B00F5CC54 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD77893202AAA7B00F5CC54 /* UserViewController.swift */; };
+		0AD77896202AB92100F5CC54 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD77895202AB92100F5CC54 /* ImageCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +56,7 @@
 		0AD7786E202A6A7300F5CC54 /* FeedbackanatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackanatorUITests.swift; sourceTree = "<group>"; };
 		0AD77870202A6A7300F5CC54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AD7787C202A6B7200F5CC54 /* initialState.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = initialState.json; sourceTree = "<group>"; };
-		0AD77882202A6BF500F5CC54 /* DataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
+		0AD77882202A6BF500F5CC54 /* Codables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Codables.swift; sourceTree = "<group>"; };
 		0AD77884202A736C00F5CC54 /* FormatterCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterCache.swift; sourceTree = "<group>"; };
 		0AD77886202A75B100F5CC54 /* FeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackManager.swift; sourceTree = "<group>"; };
 		0AD77888202A772A00F5CC54 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -64,6 +65,7 @@
 		0AD77890202A801900F5CC54 /* Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
 		0AD77892202A994800F5CC54 /* wishlist.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = wishlist.md; sourceTree = "<group>"; };
 		0AD77893202AAA7B00F5CC54 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		0AD77895202AB92100F5CC54 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				0AD7784E202A6A7200F5CC54 /* AppDelegate.swift */,
-				0AD77882202A6BF500F5CC54 /* DataStructures.swift */,
+				0AD77882202A6BF500F5CC54 /* Codables.swift */,
 				0AD77884202A736C00F5CC54 /* FormatterCache.swift */,
 				0AD77886202A75B100F5CC54 /* FeedbackManager.swift */,
 				0AD77888202A772A00F5CC54 /* Constants.swift */,
@@ -162,6 +164,7 @@
 				0AD77893202AAA7B00F5CC54 /* UserViewController.swift */,
 				0AD7788C202A79DA00F5CC54 /* Helpers.swift */,
 				0AD77890202A801900F5CC54 /* Cells.swift */,
+				0AD77895202AB92100F5CC54 /* ImageCache.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -310,7 +313,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AD77883202A6BF500F5CC54 /* DataStructures.swift in Sources */,
+				0AD77896202AB92100F5CC54 /* ImageCache.swift in Sources */,
+				0AD77883202A6BF500F5CC54 /* Codables.swift in Sources */,
 				0AD77894202AAA7B00F5CC54 /* UserViewController.swift in Sources */,
 				0AD77891202A801900F5CC54 /* Cells.swift in Sources */,
 				0AD7788D202A79DA00F5CC54 /* Helpers.swift in Sources */,

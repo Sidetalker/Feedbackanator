@@ -1,5 +1,5 @@
 //
-//  DataStructures.swift
+//  Codables.swift
 //  Feedbackanator
 //
 //  Created by Kevin Sullivan on 2/6/18.
@@ -16,10 +16,11 @@ class User: Codable {
     var id: Int
     var name: String
     var email: String
-    var avatarUrl: String?
+    var avatarUrlString: String?
     var lastInteractions = [Interaction]()
     
-    var avatarImage: UIImage? = nil
+    var avatarImage: UIImage? { return ImageCache.shared.localCache[id] }
+    var avatarUrl: URL? { return URL(string: avatarUrlString ?? "") }
     var firstName: String {
         return String(name.split(separator: " ").first ?? "")
 
@@ -33,7 +34,7 @@ class User: Codable {
         case id
         case name
         case email
-        case avatarUrl = "avatar"
+        case avatarUrlString = "avatar"
         case lastInteractions = "last_interactions"
     }
     

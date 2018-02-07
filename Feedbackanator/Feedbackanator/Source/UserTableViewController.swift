@@ -70,13 +70,14 @@ class UserTableViewController: UITableViewController, UserCellDelegate {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellUser", for: indexPath)
+        let isFinalCell = indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1
         
         if
             let userCell = cell as? UserCell,
             let user = manager.user(at: indexPath)
         {
             userCell.delegate = self
-            userCell.configure(for: user)
+            userCell.configure(for: user, isFinalCell: isFinalCell)
             return userCell
         }
 

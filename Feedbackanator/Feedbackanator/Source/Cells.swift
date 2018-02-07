@@ -17,11 +17,12 @@ class UserCell: UITableViewCell {
     static let height: CGFloat = 120
     
     @IBOutlet weak var btnGiveFeedback: UIButton!
-    @IBOutlet weak var imgAvatar: UIImageView!
+    @IBOutlet weak var imgAvatar: UIRoundedImageView!
     @IBOutlet weak var lblLastFeedback: UILabel!
     @IBOutlet weak var lblName: UILabel!
     
-    @IBOutlet weak var lineBreakLeftPadding: NSLayoutConstraint!
+    @IBOutlet weak var bottomLineView: UIView!
+    @IBOutlet weak var normalLineView: UIView!
     
     var delegate: UserCellDelegate?
     var timer: Timer?
@@ -32,10 +33,23 @@ class UserCell: UITableViewCell {
         super.init(coder: aDecoder)
     }
     
-    func configure(for user: User) {
+    func configure(for user: User, isFinalCell: Bool) {
         self.user = user
         
         updateText()
+        
+        bottomLineView.isHidden = !isFinalCell
+        normalLineView.isHidden = isFinalCell
+        
+        if let avatar = user.avatarImage {
+            imgAvatar.image = avatar
+        } else {
+            ImageCache.shared.cacheImage(for: user) { avatar in
+                DispatchQueue.main.async {
+                    self.imgAvatar.image = avatar
+                }
+            }
+        }
         
         let now = Date()
         

@@ -28,3 +28,17 @@ class PlaceholderView: UIView {
         backgroundColor = .clear
     }
 }
+
+/// A UIImageView that reapplies a rounded mask on itself anytime it is resized
+@IBDesignable
+class UIRoundedImageView: UIImageView {
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        clipsToBounds = true
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.cornerRadius = frame.width / 2
+    }
+}

@@ -15,7 +15,7 @@
         <scene sceneID="wrm-Hs-FYJ">
             <objects>
                 <tableViewController id="uU9-kH-szE" customClass="UserTableViewController" customModule="Feedbackanator" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="EhV-W9-6gD">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="EhV-W9-6gD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -27,7 +27,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ahh-aI-HGW">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blankProfile" translatesAutoresizingMaskIntoConstraints="NO" id="ahh-aI-HGW" customClass="UIRoundedImageView" customModule="Feedbackanator" customModuleProvider="target">
                                             <rect key="frame" x="16" y="11" width="75" height="75"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="75" id="9TI-hV-WOJ"/>
@@ -68,6 +68,13 @@
                                                 <constraint firstAttribute="height" constant="1" id="ndC-S8-ggc"/>
                                             </constraints>
                                         </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aRq-3X-uJC">
+                                            <rect key="frame" x="111" y="118.5" width="264" height="1"/>
+                                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="uNV-AZ-Gz6"/>
+                                            </constraints>
+                                        </view>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CYY-4Y-5J4">
                                             <rect key="frame" x="111" y="78" width="256" height="30"/>
                                             <state key="normal" title="GIVE FEEDBACK">
@@ -82,22 +89,26 @@
                                         <constraint firstItem="xis-jh-iiZ" firstAttribute="centerY" secondItem="ahh-aI-HGW" secondAttribute="centerY" id="35N-NP-jAe"/>
                                         <constraint firstItem="ahh-aI-HGW" firstAttribute="top" secondItem="yzM-8E-mhW" secondAttribute="top" constant="11" id="6aM-vF-GgX"/>
                                         <constraint firstAttribute="bottom" secondItem="3gI-mB-gNb" secondAttribute="bottom" id="6aR-SK-4Ab"/>
+                                        <constraint firstAttribute="trailing" secondItem="aRq-3X-uJC" secondAttribute="trailing" id="6tl-h7-PRM"/>
                                         <constraint firstItem="CYY-4Y-5J4" firstAttribute="top" secondItem="xis-jh-iiZ" secondAttribute="bottom" constant="7.5" id="BnZ-ig-DOk"/>
                                         <constraint firstItem="CYY-4Y-5J4" firstAttribute="leading" secondItem="xis-jh-iiZ" secondAttribute="leading" id="Cbe-h9-giS"/>
                                         <constraint firstAttribute="trailing" secondItem="xis-jh-iiZ" secondAttribute="trailing" constant="8" id="Ny4-os-Zb3"/>
                                         <constraint firstAttribute="trailing" secondItem="3gI-mB-gNb" secondAttribute="trailing" id="PBr-gl-11H"/>
                                         <constraint firstItem="CYY-4Y-5J4" firstAttribute="trailing" secondItem="xis-jh-iiZ" secondAttribute="trailing" id="Wj9-F5-2GG"/>
+                                        <constraint firstAttribute="bottom" secondItem="aRq-3X-uJC" secondAttribute="bottom" id="Yig-Lf-ISP"/>
+                                        <constraint firstItem="aRq-3X-uJC" firstAttribute="leading" secondItem="xis-jh-iiZ" secondAttribute="leading" id="ZfC-Av-koS"/>
                                         <constraint firstItem="xis-jh-iiZ" firstAttribute="leading" secondItem="ahh-aI-HGW" secondAttribute="trailing" constant="20" id="jVS-nc-9k6"/>
                                         <constraint firstItem="3gI-mB-gNb" firstAttribute="leading" secondItem="yzM-8E-mhW" secondAttribute="leading" id="nHy-jb-tkI"/>
                                         <constraint firstItem="ahh-aI-HGW" firstAttribute="leading" secondItem="yzM-8E-mhW" secondAttribute="leading" constant="16" id="vQo-Ua-i3s"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="bottomLineView" destination="3gI-mB-gNb" id="DXX-gH-7e1"/>
                                     <outlet property="btnGiveFeedback" destination="CYY-4Y-5J4" id="zG7-SE-7qh"/>
                                     <outlet property="imgAvatar" destination="ahh-aI-HGW" id="b92-Ki-VmW"/>
                                     <outlet property="lblLastFeedback" destination="6pf-pP-KWH" id="793-N7-GFr"/>
                                     <outlet property="lblName" destination="6QN-fi-XdR" id="wvQ-2Q-o25"/>
-                                    <outlet property="lineBreakLeftPadding" destination="nHy-jb-tkI" id="eYc-JO-csW"/>
+                                    <outlet property="normalLineView" destination="aRq-3X-uJC" id="YHI-bt-flT"/>
                                     <segue destination="2Iy-kP-zq8" kind="show" identifier="segueUser" id="Jtl-Hb-x1e"/>
                                 </connections>
                             </tableViewCell>
@@ -127,7 +138,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Z1-Aa-vUT">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blankProfile" translatesAutoresizingMaskIntoConstraints="NO" id="3Z1-Aa-vUT" customClass="UIRoundedImageView" customModule="Feedbackanator" customModuleProvider="target">
                                 <rect key="frame" x="137" y="84" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="3Z1-Aa-vUT" secondAttribute="height" multiplier="1:1" id="3Xp-OQ-QHI"/>
@@ -192,4 +203,7 @@
             <point key="canvasLocation" x="-362" y="142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="blankProfile" width="100" height="100"/>
+    </resources>
 </document>
